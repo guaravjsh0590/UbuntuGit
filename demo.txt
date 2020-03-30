@@ -1,4 +1,4 @@
 Hi,
 This is gaurav
-this is in tester branch
 this is my first file in git
+changes has been made by master
