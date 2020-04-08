@@ -4,9 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              def name= "Gaurav"
-              echo "hello $name"
               echo 'Building..'
+              helloworld();
                 
             }
         }

@@ -1,3 +1,6 @@
 //groovy file
-def name= "gaurav"
+def helloworld()
+{
+def name= "Gaurav"
 print "hello $name"
+}
