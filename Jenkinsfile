@@ -1,10 +1,22 @@
+Map buildParams = [  
+                    NodeToRun                   : "any",
+                    MainRepoURL                 : "https://github.com/guaravjsh0590/UbuntuGit.git",
+                    MainRepoBranch              : "master",
+                    ] as HashMap
+
 pipeline {
-    agent any
+    agent
+       {
+      node {
+            label "${buildParams.NodeToRun}"
+        }
+      }
 
     stages {
         stage('Build') {
             steps {
               echo 'Building..'
+              echo "Build the project from ${buildParams.MainRepoURL} and Branch  ${buildParams.MainRepoBranch}"
               hello()
                 
             }
