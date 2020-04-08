@@ -1,5 +1,5 @@
 Map buildParams = [  
-                    NodeToRun                   : "any",
+                    NodeToRun                   : "master",
                     MainRepoURL                 : "https://github.com/guaravjsh0590/UbuntuGit.git",
                     MainRepoBranch              : "master",
                     ] as HashMap
