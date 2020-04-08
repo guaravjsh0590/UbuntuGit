@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
-                hello.groovy
+              def name= "Gaurav"
+              echo "hello $name"
+              echo 'Building..'
+                
             }
         }
         stage('Test') {
