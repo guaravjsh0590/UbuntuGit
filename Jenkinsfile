@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
               echo 'Building..'
-              hello();
+              hello()
                 
             }
         }
@@ -21,7 +21,7 @@ pipeline {
         }
     }
 }
-def helloworld()
+def hello()
 {
 def name= "Jenkins"
 print "hello $name"
