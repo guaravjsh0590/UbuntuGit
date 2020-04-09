@@ -15,15 +15,12 @@ stages {
 stage('Build') {
 steps {
 echo 'Building..'
+osSearch()
 echo "Build the project from ${buildParams.MainRepoURL} and Branch  ${buildParams.MainRepoBranch}"
-if (System.properties['os.name'].toLowerCase().contains('windows')) {
-println "it's Windows"
-} else {
-println "it's not Windows"
 hello()
 }
 }
-}
+
 stage('Test') {
 steps {
 echo 'Testing..'
@@ -47,4 +44,12 @@ def add(def a,def b)
 def c=a+b
 print "sum of a+b is: $c"
 }
+def osSearch()
+{
+if (System.properties['os.name'].toLowerCase().contains('windows')) {
+println "it's Windows"
+} else {
+println "it's not Windows"
 
+}
+}
