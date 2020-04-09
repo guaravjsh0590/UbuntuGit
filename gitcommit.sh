@@ -17,3 +17,6 @@ read message
 
 git commit -m "$message"
 
+echo "pushing the changes"
+
+git push origin master
