@@ -23,14 +23,14 @@ hello()
 
 stage('Test') {
 steps {
-echo "Running Test for  ${env.BUILD_ID} on ${env.JENKINS_URL}"
-echo 'Testing..'
+echo "Running Test for BUILD ${env.BUILD_ID} on ${env.JENKINS_URL}"
+echo 'Testing the addition function'
 add(1,3)
 }
 }
 stage('Deploy') {
 steps {
-echo 'Deploying..The build no: $BUILD_NUMBER'
+echo 'Deploying..The build no: ${env.BUILD_ID}'
 }
 }
 }
@@ -47,7 +47,7 @@ print "sum of a+b is: $c"
 }
 def osSearch()
 {
-if (System.properties['os.name'].toLowerCase().contains('windows')) {
+if (System.properties['os.name'].toLowerCase().contains('ubuntu')) {
 println "it's Windows"
 } else {
 println "it's not Windows"
