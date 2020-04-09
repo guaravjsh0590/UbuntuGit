@@ -17,10 +17,15 @@ pipeline {
             steps {
               echo 'Building..'
               echo "Build the project from ${buildParams.MainRepoURL} and Branch  ${buildParams.MainRepoBranch}"
-              hello()
+              if (isUnix()) {
+            hello()
+         } else {
+            echo "this is not Unix OS......."
+         }
+      }
                 
             }
-        }
+        
         stage('Test') {
             steps {
                 echo 'Testing..'
