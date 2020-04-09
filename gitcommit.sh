@@ -26,5 +26,5 @@ git push origin master
 
 wait
 
-Username for 'https://github.com':$username
-Password for 'https://gauravjsh0590@gmail.com@github.com':$password
+Username for 'https://github.com':$1
+Password for 'https://gauravjsh0590@gmail.com@github.com':$2
