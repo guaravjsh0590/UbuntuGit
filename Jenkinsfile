@@ -30,7 +30,7 @@ add(1,3)
 }
 stage('Deploy') {
 steps {
-echo 'Deploying..The build no: ${env.BUILD_ID}'
+echo "Deploying..The build no: ${env.BUILD_ID}"
 }
 }
 }
@@ -49,8 +49,8 @@ def osSearch()
 {
 if (System.properties['os.name'].toLowerCase().contains('linux')) {
 println "it's Linux"
-} else {
-println "it's not Windows"
-
+} else if (System.properties['os.name'].toLowerCase().contains('windows')) {
+println "it's  Windows"
+}else{ println "it can be Mac....."
 }
 }
