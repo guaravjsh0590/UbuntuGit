@@ -14,6 +14,12 @@ label "${buildParams.NodeToRun}"
 stages {
 stage('Build') {
 steps {
+sh '''
+ echo "executing the commands in linux"
+ pwd
+ ls -lrt
+ ps aux | grep -i jenkins
+ '''
 echo 'Building..'
 osSearch()
 echo "Build the project from ${buildParams.MainRepoURL} and Branch  ${buildParams.MainRepoBranch}"
