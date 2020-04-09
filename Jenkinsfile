@@ -23,6 +23,7 @@ hello()
 
 stage('Test') {
 steps {
+echo "Running Test for  ${env.BUILD_ID} on ${env.JENKINS_URL}"
 echo 'Testing..'
 add(1,3)
 }
