@@ -17,13 +17,15 @@ pipeline {
             steps {
               echo 'Building..'
               echo "Build the project from ${buildParams.MainRepoURL} and Branch  ${buildParams.MainRepoBranch}"
-              if (isUnix()) {
-            hello()
-         } else {
-            echo "this is not Unix OS......."
+            if (System.properties['os.name'].toLowerCase().contains('windows')) {
+               println "it's Windows"
+            } else {
+               println "it's not Windows"
+               hello()
+            } 
+           
          }
       }
-                
             }
         
         stage('Test') {
