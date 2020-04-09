@@ -1,8 +1,6 @@
 #for commiting the changes
 #!/bin/bash
 
-username= "gauravjsh0590@gmail.com"
-password= "Pesitm@123"
 
 echo "checking the git status"
 
@@ -24,7 +22,4 @@ echo "pushing the changes"
 
 git push origin master
 
-wait
 
-Username for 'https://github.com':$1
-Password for 'https://gauravjsh0590@gmail.com@github.com':$2
