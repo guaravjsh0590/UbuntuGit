@@ -36,6 +36,7 @@ echo 'Deploying..The build no: $BUILD_NUMBER'
 }
 }
 }
+}
 def hello()
 {
 def name= "Jenkins"
