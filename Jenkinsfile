@@ -74,7 +74,7 @@ def failJobError()
 
 //activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}"
 def lines=new File("${env.JENKINS_HOME}/jobs/Pipeline/builds/${env.BUILD_ID}/log").readLines()
-BUILD_STRING = "Fail"
+BUILD_STRING = "Failed"
 println("=====================================================================")
 println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
 //println "================active job is: $filePath=========================="
