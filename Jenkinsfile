@@ -51,10 +51,12 @@ echo "Deploying..The build no: ${env.BUILD_ID}"
 def hello()
 {
 def name= "Jenkins"
+println "Fail : Hello Fail job"
 print "hello $name"
 }
 def add(def a,def b)
 {
+print "Fail : this job is Fail"
 def c=a+b
 print "sum of a+b is: $c"
 }
