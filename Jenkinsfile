@@ -70,14 +70,14 @@ println "it's  Windows"
 def failJobError()
 {
 
-//activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}/log"
-active="${env.JENKINS_URL}/jobs/Pipeline/builds/${env.BUILD_ID}/}"
+//activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}"
+active="${env.JENKINS_HOME}/jobs/Pipeline/builds/${env.BUILD_ID}}"
 BUILD_STRING = "Fail"
 println("=====================================================================")
 println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
 println "================active job is: $active=========================="
 
-new FileReader('/var/jenkins_home/jobs/Pipeline/builds/28/log').eachLine{ line ->
+new FileReader('$active/log').eachLine{ line ->
     if (line =~ /$BUILD_STRING/) {
             println "error: $line"
         }
