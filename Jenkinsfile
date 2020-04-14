@@ -39,14 +39,14 @@ steps {
 echo "Deploying..The build no: ${env.BUILD_ID}"
 }
 }
+}
  post {
         always{
             echo "checking for Build Errors********************************************"
-            zFailedJobError()
-            zSplunk(m_zDevOpsHelper)
+            failJobError()
         }
     }
-}
+
 }
 def hello()
 {
