@@ -75,9 +75,9 @@ active="`${env.JENKINS_URL}`/jobs/Pipeline/builds/`${env.BUILD_ID}`/}"
 BUILD_STRING = "Fail"
 println("=====================================================================")
 println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
-//println "================active job is: $active=========================="
+println "================active job is: $active=========================="
 
-new FileReader('$active/log.txt').eachLine{ line ->
+new FileReader('/var/jenkins_home/jobs/Pipeline/builds/27/log.txt').eachLine{ line ->
     if (line =~ /$BUILD_STRING/) {
             println "error: $line"
         }
