@@ -56,8 +56,6 @@ print "hello $name"
 }
 def add(def a,def b)
 {
-print "Fail : this job is Fail"
-def c=a+b
 print "sum of a+b is: $c"
 }
 def osSearch()
@@ -74,7 +72,7 @@ def failJobError()
 
 //activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}"
 def lines=new File("${env.JENKINS_HOME}/jobs/Pipeline/builds/${env.BUILD_ID}/log").readLines()
-BUILD_STRING = "Failed"
+BUILD_STRING = "Fail*"
 BUILD_STRING1 = "Linux"
 println("=====================================================================")
 println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
