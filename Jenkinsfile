@@ -71,13 +71,13 @@ def failJobError()
 {
 
 //activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}"
-active="${env.JENKINS_HOME}/jobs/Pipeline/builds/${env.BUILD_ID}}"
+def filePath="${env.JENKINS_HOME}/jobs/Pipeline/builds/${env.BUILD_ID}\log"
 BUILD_STRING = "Fail"
 println("=====================================================================")
 println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
-println "================active job is: $active=========================="
+println "================active job is: $filePath=========================="
 
-new FileReader('$active/log').eachLine{ line ->
+new File(filePath).eachLine{ line ->
     if (line =~ /$BUILD_STRING/) {
             println "error: $line"
         }
