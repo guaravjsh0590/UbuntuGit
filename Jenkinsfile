@@ -39,6 +39,13 @@ steps {
 echo "Deploying..The build no: ${env.BUILD_ID}"
 }
 }
+ post {
+        always{
+            echo "checking for Build Errors********************************************"
+            zFailedJobError()
+            zSplunk(m_zDevOpsHelper)
+        }
+    }
 }
 }
 def hello()
@@ -59,4 +66,23 @@ println "it's Linux"
 println "it's  Windows"
 }else{ println "it can be Mac....."
 }
+}
+def failJobError()
+{
+
+//activeJobs="/var/jenkins_home/jobs/_ToBeDeleted/zLib_Test/zlib-test/builds/${env.BUILD_NUMBER}/log"
+oactive="${env.JENKINS_URL/jobs/Pipeline/builds/${env.BUILD_ID}/}"
+BUILD_STRING = "Fail"
+println("=====================================================================")
+println "*************Searching Job Name: 15.2.5.${env.BUILD_NUMBER} for Build Failure***********"
+//println "================active job is: $active=========================="
+
+new FileReader('$active/log.txt').eachLine{ line ->
+    if (line =~ /$BUILD_STRING/) {
+            println "error: $line"
+        }
+    }
+
+println("=====================================================================")
+
 }
